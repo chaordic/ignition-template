@@ -34,6 +34,6 @@ object WordCountSetup {
     val top1000Words: Seq[(Int, String)] = countsWithWords.top(1000)
 
     // print top words
-    top1000Words.zipWithIndex.foreach { case ((freq, word), i) => println(s"$i) $freq - '$word'") }
+    top1000Words.zipWithIndex.foreach { case ((freq, word), i) => println(s"${i+1}) $freq - '$word'") }
   }
 }
