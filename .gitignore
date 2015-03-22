@@ -1,0 +1,33 @@
+*.class
+*.log
+.classpath
+.settings
+
+# sbt specific
+.cache/
+.cache
+.history/
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+.project
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+.idea/
+.idea_modules/
+*.iml
+
+# Python
+*.pyc
+
+# Node
+node_modules
+
+# Velocity
+velocity.log*
