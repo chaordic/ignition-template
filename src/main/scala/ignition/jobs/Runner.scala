@@ -2,11 +2,11 @@ package ignition.jobs
 
 import ignition.core.jobs.CoreJobRunner
 import ignition.jobs.setups._
-import ignition.jobs.setups.samples._
-import org.apache.spark.SparkConf
 
 object Runner {
 
+  // Binds a setup name to a function that will run this setup and (optionally) a custom
+  // extra configuration for the given setup
   val availableJobsSetups = Map[String, (CoreJobRunner.RunnerContext => Unit, Map[String, String])](
     // Simple Samples
     ("HelloWorldSetup", (context => HelloWorldSetup.run(context), Map.empty)),
