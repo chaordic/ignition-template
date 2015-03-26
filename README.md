@@ -1,6 +1,6 @@
 # Ignition-Template
 
-This provides a template to work with Spark and with Ignition-Core.
+This provides a template to work with [Apache Spark](http://spark.apache.org/) and with [Ignition-Core](https://github.com/chaordic/ignition-core/).
 
 ## Notable features
 
