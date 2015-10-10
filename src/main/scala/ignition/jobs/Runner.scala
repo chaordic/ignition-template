@@ -11,8 +11,8 @@ object Runner {
     // Simple Samples
     ("HelloWorldSetup", (context => HelloWorldSetup.run(context), Map.empty)),
     ("WordCountSetup", (context => WordCountSetup.run(context), Map.empty)),
-    // Main jobs
-    ("AnotherSetup", (context => WordCountSetup.run(context), Map.empty)) // FIXME
+    ("LogAnalysisSetup1", (context => LogAnalysisSetup1.run(context), Map.empty)),
+    ("LogAnalysisSetup2", (context => LogAnalysisSetup2.run(context), Map.empty))
   )
 
 
