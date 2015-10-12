@@ -5,8 +5,7 @@ import ignition.core.jobs.CoreJobRunner.RunnerContext
 object LogAnalysisSetup2 {
 
   val addressLines: Seq[String] =
-    """
-      |1 10.0.0.1
+    """1 10.0.0.1
       |2 10.0.0.2
       |3 10.0.0.1
       |4 10.0.0.3
@@ -15,12 +14,10 @@ object LogAnalysisSetup2 {
       |7 10.0.0.4
       |8 10.0.0.5
       |9 10.0.0.5
-      |10 10.0.0.6
-    """.stripMargin.split("\n").filter(_.trim.nonEmpty)
+      |10 10.0.0.6""".stripMargin.split("\n")
   
   val statusLines: Seq[String] =
-     """
-       |1 /pagina.html 401
+     """1 /pagina.html 401
        |2 /pagina.html 401
        |3 /pagina.html 401
        |4 /pagina.html 401
@@ -29,8 +26,7 @@ object LogAnalysisSetup2 {
        |7 /pagina.html 200
        |8 /pagina.html 200
        |9 /pagina.html 404
-       |10 /pagina.html 500
-     """.stripMargin.split("\n").filter(_.trim.nonEmpty)
+       |10 /pagina.html 500""".stripMargin.split("\n")
 
    def run(runnerContext: RunnerContext) {
 

@@ -5,8 +5,7 @@ import ignition.core.jobs.CoreJobRunner.RunnerContext
 object LogAnalysisSetup1 {
 
   val sample =
-    """
-      |0 /pagina.html 200
+    """0 /pagina.html 200
       |1 /pagina.html 200
       |2 /pagina.html 500
       |3 /pagina.html 500
@@ -15,8 +14,7 @@ object LogAnalysisSetup1 {
       |6 /pagina.html 401
       |7 /pagina.html 403
       |8 /pagina.html 403
-      |9 /pagina.html 201
-    """.stripMargin.split("\n").filter(_.trim.nonEmpty)
+      |9 /pagina.html 201""".stripMargin.split("\n")
 
   def run(runnerContext: RunnerContext) {
 

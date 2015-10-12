@@ -12,7 +12,9 @@ object Runner {
     ("HelloWorldSetup", (context => HelloWorldSetup.run(context), Map.empty)),
     ("WordCountSetup", (context => WordCountSetup.run(context), Map.empty)),
     ("LogAnalysisSetup1", (context => LogAnalysisSetup1.run(context), Map.empty)),
-    ("LogAnalysisSetup2", (context => LogAnalysisSetup2.run(context), Map.empty))
+    ("LogAnalysisSetup2", (context => LogAnalysisSetup2.run(context), Map.empty)),
+    ("Permutations", (context => Permutations.run(context), Map.empty)),
+    ("UsersPasswords", (context => UsersPasswords.run(context), Map.empty))
   )
 
 
@@ -26,7 +28,7 @@ object Runner {
       "spark.driver.userClassPathFirst" -> "true",
       "spark.executor.userClassPathFirst" -> "true",
       "spark.hadoop.validateOutputSpecs" -> "true",
-      "spark.eventLog.enabled" -> "false" // may break the master with big jobs if true
+      "spark.eventLog.enabled" -> "false" // may break the master with big jobs if true, be careful
     )
     CoreJobRunner.runJobSetup(args, availableJobsSetups, defaultSparkConf)
   }
