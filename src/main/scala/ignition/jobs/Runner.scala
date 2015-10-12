@@ -13,6 +13,7 @@ object Runner {
     ("WordCountSetup", (context => WordCountSetup.run(context), Map.empty)),
     ("LogAnalysisSetup1", (context => LogAnalysisSetup1.run(context), Map.empty)),
     ("LogAnalysisSetup2", (context => LogAnalysisSetup2.run(context), Map.empty)),
+    ("LogAnalysisSetup3", (context => LogAnalysisSetup3.run(context), Map.empty)),
     ("Permutations", (context => Permutations.run(context), Map.empty)),
     ("UsersPasswords", (context => UsersPasswords.run(context), Map.empty))
   )
