@@ -20,17 +20,14 @@ object Permutations {
 
      val usersRDD = sc.parallelize(usersList)
 
-     val words = usersRDD flatMap { x =>
-       x.split(" ")
-     } keyBy { x =>
-       x.sorted
-     } groupByKey() map { case (_, it) =>
-       it.toSet
-     } filter { x =>
-       x.size > 1
-     } map { x =>
-       x.mkString(" ")
-     }
+     val words =
+       usersRDD
+         .flatMap { x => x.split(" ")}
+         .keyBy { x => x.sorted }
+         .groupByKey()
+         .map { case (_, it) => it.toSet }
+         .filter { x => x.size > 1 }
+         .map { x => x.mkString(" ") }
 
      words.collect() foreach println
 

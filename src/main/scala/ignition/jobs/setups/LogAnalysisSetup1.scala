@@ -21,21 +21,24 @@ object LogAnalysisSetup1 {
     val sc = runnerContext.sparkContext
     val sparkConfig = runnerContext.config
     val rdd = sc.parallelize(sample)
-    val status = rdd map { x =>
+    val status = rdd.map { x =>
       x.split(" ")(2)
     }
 
-    val count200 = status filter { x =>
-      x == "200"
-    } count()
+    val count200 =
+      status
+        .filter { s => s == "200" }
+        .count()
 
-    val count500 = status filter { x =>
-      x == "500"
-    } count()
+    val count500 =
+      status
+        .filter { s => s == "500"}
+        .count()
 
-    val count401 = status filter { x =>
-      x == "401"
-    } count()
+    val count401 =
+      status
+        .filter { s => s == "401"}
+        .count()
 
     val total = rdd.count()
 

@@ -36,12 +36,14 @@ object UsersPasswords {
      val passwordsRDD = sc.parallelize(passwordsList)
      val md5sRDD = sc.parallelize(md5sList)
 
-     usersRDD.cartesian(passwordsRDD).cartesian(md5sRDD).filter({ case ((user, password), md5) =>
-       val pair = s"${user}:${password}"
-       val currentMD5 =
-         MessageDigest.getInstance("MD5").digest(pair.getBytes).map("%02x".format(_)).mkString
-       md5 == currentMD5
-     }).foreach(println)
+     usersRDD.cartesian(passwordsRDD).cartesian(md5sRDD)
+       .filter { case ((user, password), md5) =>
+         val pair = s"${user}:${password}"
+         val currentMD5 =
+           MessageDigest.getInstance("MD5").digest(pair.getBytes).map("%02x".format(_)).mkString
+         md5 == currentMD5
+       }
+       .foreach(println)
 
    }
 

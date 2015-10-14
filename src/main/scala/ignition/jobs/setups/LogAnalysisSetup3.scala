@@ -25,20 +25,20 @@ object LogAnalysisSetup3 {
 
      val statusRDD = sc.parallelize(statusLines)
 
-     val pages = statusRDD map { x =>
+     val pages = statusRDD.map { x =>
        x.split(" ")(1)
      }
 
      val total = statusRDD.count()
 
-     pages map {
-       (_, 1)
-     } reduceByKey {
-       _ + _
-     } sortBy({case (page, count) => count}, false) take(5) foreach { case (page, count) =>
-       println(s"${page} ${count} ${count.toFloat / total}")
-     }
-
+     pages
+       .map { p => (p, 1) }
+       .reduceByKey { _ + _ }
+       .sortBy({ case (page, count) => count }, false)
+       .take(5)
+       .foreach { case (page, count) =>
+         println(s"${page} ${count} ${count.toFloat / total}")
+       }
 
 
    }
