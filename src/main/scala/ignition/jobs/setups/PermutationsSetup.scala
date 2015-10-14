@@ -2,7 +2,7 @@ package ignition.jobs.setups
 
 import ignition.core.jobs.CoreJobRunner.RunnerContext
 
-object Permutations {
+object PermutationsSetup {
 
   val usersList: Seq[String] =
     """roseboro

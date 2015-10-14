@@ -4,7 +4,7 @@ import java.security.MessageDigest
 
 import ignition.core.jobs.CoreJobRunner.RunnerContext
 
-object UsersPasswords {
+object UsersPasswordsSetup {
 
   val usersList: Seq[String] =
     """allan
@@ -43,6 +43,7 @@ object UsersPasswords {
            MessageDigest.getInstance("MD5").digest(pair.getBytes).map("%02x".format(_)).mkString
          md5 == currentMD5
        }
+       .collect()
        .foreach(println)
 
    }
