@@ -1,7 +1,6 @@
 package ignition.jobs
 
 import org.apache.spark.rdd.RDD
-import org.apache.spark.SparkContext._
 
 object WordCountJob {
 
