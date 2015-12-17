@@ -6,7 +6,7 @@ import org.apache.spark.rdd.RDD
 
 import ignition.core.jobs.CoreJobRunner.RunnerContext
 import ignition.core.jobs.utils.SparkContextUtils._
-// filterAndGetTextFiles requires a date extractor:
+// filterAndGetParallelTextFiles requires a date extractor:
 import ignition.core.jobs.utils.SimplePathDateExtractor.default
 
 // Count words and give the top 1000 highest-frequency
@@ -17,7 +17,7 @@ object WordCountSetup {
     val sc = runnerContext.sparkContext
     val sparkConfig = runnerContext.config
 
-    val lines: RDD[String] = sc.filterAndGetTextFiles("s3n://mr101ufcg/data/gutenberg")
+    val lines: RDD[String] = sc.filterAndGetParallelTextFiles("s3n://mr101ufcg/data/gutenberg")
 
     // The job is generic and can be used in other contexts
     // This setup is specific because it binds a certain source of files (gutenberg books)
