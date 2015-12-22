@@ -12,7 +12,7 @@ object IgnitionBuild extends Build {
       name := "ignition-template",
       version := "1.0",
       scalaVersion := "2.10.4",
-      scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Xfatal-warnings"),
+      scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Xfatal-warnings", "-Xmax-classfile-name", "130"),
       // Because we can't run two spark contexts on same VM
       parallelExecution in Test := false,
       resolvers += "Cloudera Repository" at "https://repository.cloudera.com/artifactory/cloudera-repos/",
