@@ -10,3 +10,11 @@ test in assembly := {}
 
 run in Compile <<= Defaults.runTask(fullClasspath in Compile, mainClass in (Compile, run), runner in (Compile, run))
 runMain in Compile <<= Defaults.runMainTask(fullClasspath in Compile, runner in (Compile, run))
+mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) =>
+  {
+    case x if x.contains("apache/commons/") =>
+      MergeStrategy.first
+    case x =>
+      old(x)
+  }
+}

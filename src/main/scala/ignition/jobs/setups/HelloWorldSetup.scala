@@ -16,8 +16,9 @@ object HelloWorldSetup extends ExecutionRetry {
 
     val count = executeRetrying {
       val somedata = sc.filterAndGetParallelTextFiles(
-        "s3n:///mr101ufcg/data/lastfm/similars",
-        requireSuccess = true, synchLocally = Option("lastfm-similars"), forceSynch = true)
+              "s3a://mr101ufcg/data/lastfm/similars",
+              requireSuccess = true, synchLocally = Option("lastfm-similars"), forceSynch = true, ignoreMalformedDates = true)
+
 
       somedata.count
     }

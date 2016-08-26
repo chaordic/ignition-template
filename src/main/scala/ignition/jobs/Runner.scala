@@ -24,10 +24,8 @@ object Runner {
       "spark.logConf" -> "true",
       "spark.executor.extraJavaOptions" -> "-Djava.io.tmpdir=/mnt -verbose:gc -XX:-PrintGCDetails -XX:+PrintGCTimeStamps -XX:-UseGCOverheadLimit",
       "spark.akka.frameSize" -> "500",
-      "spark.shuffle.memoryFraction" -> "0.2",
-      "spark.storage.memoryFraction" -> "0.3",
-      "spark.driver.userClassPathFirst" -> "true",
-      "spark.executor.userClassPathFirst" -> "true",
+//      "spark.driver.userClassPathFirst" -> "true",
+//      "spark.executor.userClassPathFirst" -> "true",
       "spark.hadoop.validateOutputSpecs" -> "true",
       "spark.eventLog.enabled" -> "false" // may break the master with big jobs if true, be careful
     )
