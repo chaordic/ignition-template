@@ -17,7 +17,7 @@ object WordCountSetup {
     val sc = runnerContext.sparkContext
     val sparkConfig = runnerContext.config
 
-    val lines: RDD[String] = sc.filterAndGetParallelTextFiles("s3n://mr101ufcg/data/gutenberg")
+    val lines: RDD[String] = sc.textFile("s3n://mr101ufcg/data/gutenberg")
 
     // The job is generic and can be used in other contexts
     // This setup is specific because it binds a certain source of files (gutenberg books)
